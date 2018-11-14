@@ -3,15 +3,30 @@
 
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
-    <script src="kendanieak.js"></script>
+    <script src="class.kendanieak.js"></script>
     <script src="class.js"></script>
     <script src="script.js"></script>
-    <script src="death.js"></script>
-    <script src="dino.js"></script>
-    <script src="gishatich.js"></script>
-    <script src="xotaker.js"></script>
-    <script src="Grass.js"></script>
+    <script src="class.death.js"></script>
+    <script src="class.dino.js"></script>
+    <script src="class.gishatich.js"></script>
+    <script src="class.xotaker.js"></script>
+    <script src="class.Grass.js"></script>
     <!--<script src="Xotaker.js"></script>-->
+    <div class='row text-center' style='margin-top: 50px;'>
+        <div id="1" class="gridBox btn btn-lg btn-primary">Hey Everybody</div>
+    </div>
+    <button onClick="myTimer = setInterval(myCounter, 1000)">Start counter!</button>
+
+    <p id="demo">Click on the button above and I will count forever.</p>
+
+    <button onClick="clearInterval(myTimer)">Stop counter!</button>
+
+    <script>
+        var c = 0;
+        function myCounter() {
+            document.getElementById("demo").innerHTML = ++c;
+        }
+    </script>
 </head>
 
 <body>
