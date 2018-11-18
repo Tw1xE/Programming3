@@ -2,6 +2,23 @@
 <html>
 
 <head>
+        <script>
+                function startTime() {
+                    var today = new Date();
+                    var h = today.getHours();
+                    var m = today.getMinutes();
+                    var s = today.getSeconds();
+                    m = checkTime(m);
+                    s = checkTime(s);
+                    document.getElementById('txt').innerHTML =
+                    h + ":" + m + ":" + s;
+                    var t = setTimeout(startTime, 500);
+                }
+                function checkTime(i) {
+                    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                    return i;
+                }
+                </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
     <script src="class.KendaniEak.js"></script>
     <script src="class.Grass.js"></script>
@@ -10,13 +27,17 @@
     <script src="class.Dino.js"></script>
     <script src="class.Napastak.js"></script>
     <script src="class.Death.js"></script>
-    <script src="script.js"></script>
+    
     <div class='row text-center' style='margin-top: 50px;'>
         <div id="1" class="gridBox btn btn-lg btn-primary">Hey Everybody</div>
     </div>
 </head>
 
 <body>
+    <h1 id="season"></h1>
+        <body onload="startTime()">
+                <div id="txt"></div>
+                <script src="script.js"></script>
 </body>
 
 </html>
